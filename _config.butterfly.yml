@@ -461,7 +461,10 @@ site_verification:
   # - name: baidu_site_verification
   #   content: xxxxxxx
 
- Beautify/Effect (美化/效果)
+Beautify/Effect (美化/效果)
+beautify:
+  enable: true
+  
 # --------------------------------------
 
 # Theme color for customize
