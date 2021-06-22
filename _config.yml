@@ -7,7 +7,7 @@ title: ydwj的游戏开发日记
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: ydwj
 language: zh-CN
 timezone: ''
 
@@ -105,3 +105,6 @@ deploy:
    type: git
    repo: https://github.com/ydwj/ydwj.github.io.git
    branch: main
+
+jsDelivr:
+  url: https://cdn.jsdelivr.net/gh/ydwj/ydwj.github.io
