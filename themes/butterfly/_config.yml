@@ -461,7 +461,13 @@ site_verification:
   # - name: baidu_site_verification
   #   content: xxxxxxx
 
-# Beautify/Effect (美化/效果)
+# 美化頁面顯示
+beautify:
+  enable: true
+  field: site # site/post
+  title-prefix-icon: '\f0c1'
+  title-prefix-icon-color: "#F47466"
+
 # --------------------------------------
 
 # Theme color for customize
@@ -570,13 +576,6 @@ ClickShowText:
 # Default display mode (網站默認的顯示模式)
 # light (default) / dark
 display_mode: light
-
-# Beautify (美化頁面顯示)
-beautify:
-  enable: false
-  field: post # site/post
-  title-prefix-icon: '\f0c1'
-  title-prefix-icon-color: '#F47466'
 
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
