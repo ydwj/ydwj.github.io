@@ -208,7 +208,7 @@ related_post:
   date_type: created # or created or updated 文章日期顯示創建日或者更新日
 
 # figcaption (圖片描述文字)
-photofigcaption: false
+photofigcaption: true
 
 # post_pagination (分頁)
 # value: 1 || 2 || false
@@ -569,7 +569,7 @@ ClickShowText:
     # - I
     # - LOVE
     # - YOU
-  fontSize: 15px
+  fontSize: 16px
   random: false
   mobile: false
 
