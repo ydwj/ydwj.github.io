@@ -1,9 +1,9 @@
 ---
 title: Test2
 date: 2021-06-20 18:56:33
-tags: Unity Dots ECS C#
+tags: Unity
 
-{% asset_img 1.jpg This is an image %}
+
 ---
 ##用Unity DOTS制作4万飞剑的太极剑阵！
 

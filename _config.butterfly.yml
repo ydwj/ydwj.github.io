@@ -6,12 +6,13 @@
 # name || icon:
 #   name: link || icon
 
+
 menu:
   首页: / || fas fa-home
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  關於: /about/ || fas fa-heart
+  关于: /about/ || fas fa-heart
 
 
 # Hide the child menu items in mobile sidebar
@@ -20,11 +21,11 @@ hide_sidebar_menu_child: false
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: darker #light  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: light #light  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: false # unit: px
+highlight_height_limit: 200 # unit: px
 code_word_wrap: false
 
 # copy settings
@@ -39,8 +40,8 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  # fab fa-github: https://github.com/xxxxx || Github
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
+  fab fa-github: https://github.com/ydwj || Github
+  fab fa-zhihu:  https://www.zhihu.com/people/ba-ba-27-54 || Zhihu
 
 # search (搜索)
 # --------------------------------------
@@ -81,8 +82,8 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
-  effect: false
+  img: https://z3.ax1x.com/2021/06/23/Rn71eS.png
+  effect: false 
 
 # Disable all banner image
 disable_top_img: false
@@ -569,7 +570,7 @@ ClickShowText:
     # - I
     # - LOVE
     # - YOU
-  fontSize: 16px
+  fontSize: 17px
   random: false
   mobile: false
 
@@ -580,10 +581,10 @@ display_mode: light
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
-  global-font-size:
+  global-font-size: 17px
   code-font-size:
   font-family:
-  code-font-family:
+  code-font-family: consolas
 
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
@@ -637,7 +638,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/ydwj
   card_announcement:
     enable: true
     content: This is my Blog
