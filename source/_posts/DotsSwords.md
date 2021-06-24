@@ -38,7 +38,9 @@ DOTs的相关package并未发布，也无法在 Package Manager中搜索到，�
 + com.unity.rendering.hybrid
 + com.unity.physics
 
-<div style="width:90%;margin:auto">{% asset_img 3.png %}</div>
+![](https://z3.ax1x.com/2021/06/22/ReYboq.gif) 
+
+![](https://z3.ax1x.com/2021/06/22/ReYboq.gif) 
 
 等待一会儿包就下载好了，但我们的准备工作还没做完。
 
@@ -48,16 +50,33 @@ DOTs的相关package并未发布，也无法在 Package Manager中搜索到，�
 
 首先点击Edit >ProjectSetting>Quality>查看当前使用的Rendering设置文件，关闭SRP Batcher：
 
-<div style="width:90%;margin:auto">{% asset_img 4.png %}</div>
+![](4.png "Butterfly configuration")
+
 再新建一个材质，勾选Enable GPU Instancing。
 
-<div style="width:90%;margin:auto">{% asset_img 5.png %}</div>
+![](3.png "Butterfly configuration")
+
+{% note default %}
+111111111
+{% endnote %}
+
+![](4.png "Butterfly configuration")
+
+{% note default %}
+111111111
+{% endnote %}
+
+![](5.png "Butterfly configuration")
+{% note default %}
+111111111
+{% endnote %}
 你就会发现Unity将拥有同一此材质的物体合批渲染了：
 
-{% asset_img 6.png %} 
+![](7.png "Butterfly configuration")
+
 值得一提的是，本工程中的飞剑已经被我用Blender手动将顶点数降低到105个了，因为我最后大致要生成4万把飞剑，原本的飞剑模型有上千个顶点，庞大的定点数会导致我的场景近乎卡死，最后测试我的电脑能顶住的最大顶点数大概是10M左右。
 
-{% asset_img 7.png %}
+<img src="7.png">
 
 ```csharp
 
