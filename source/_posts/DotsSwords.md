@@ -8,6 +8,8 @@ tags:
 - ECS 
 categories:
 - Unity 
+keyword: 'UnityDots ECS'
+description: 上手Unity DOTS的小案例
 cover : https://i.loli.net/2021/06/21/IHO8uvw4QBpdmYE.jpg
 ---
 
@@ -46,16 +48,16 @@ DOTs的相关package并未发布，也无法在 Package Manager中搜索到，�
 
 首先点击Edit >ProjectSetting>Quality>查看当前使用的Rendering设置文件，关闭SRP Batcher：
 
-{% asset_img 4.png %} &nbsp;
+<div style="width:90%;margin:auto">{% asset_img 4.png %}</div>
 再新建一个材质，勾选Enable GPU Instancing。
 
-![](/DotsSwords/7.png) &nbsp; 
+<div style="width:90%;margin:auto">{% asset_img 5.png %}</div>
 你就会发现Unity将拥有同一此材质的物体合批渲染了：
 
-{% asset_img 6.png %} &nbsp;
+{% asset_img 6.png %} 
 值得一提的是，本工程中的飞剑已经被我用Blender手动将顶点数降低到105个了，因为我最后大致要生成4万把飞剑，原本的飞剑模型有上千个顶点，庞大的定点数会导致我的场景近乎卡死，最后测试我的电脑能顶住的最大顶点数大概是10M左右。
 
-{% asset_img 7.png %} &nbsp;
+{% asset_img 7.png %}
 
 ```csharp
 
