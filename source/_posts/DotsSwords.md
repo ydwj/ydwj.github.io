@@ -3,14 +3,16 @@ title: 用Unity DOTS制作4万飞剑的太极剑阵！
 date: 2021-06-21 14:49:24
 tags: 
 - Unity
-- c# 
+- C# 
 - DOTS
 - ECS 
 categories:
 - Unity 
-keyword: 'UnityDots ECS'
-description: 上手Unity DOTS的小案例
+keyword: 'UnityDots' 
+description: 上手最新的Unity DOTS的案例
 cover : https://i.loli.net/2021/06/21/IHO8uvw4QBpdmYE.jpg
+sticky: 1
+
 ---
 
 大家好，我是炎拳。
@@ -290,6 +292,7 @@ public struct SwordTag : IComponentData{}
 然后新建一个System，继承SystemBase基类，需要注意的是：`JobComponentSystem和ComponentSystem这两个基类将会被摒弃`，（Entities 0.17.0 package文档中官方明确已经明确表示），`SystemBase`将会是System唯一的基类，所以建议尽量使用SystemBase。
 
 接着实现System接口，通过`Entitie.ForEach`方法筛选出Sword Entity，并更新位置：
+
 ```csharp
 
 using Unity.Entities;
@@ -422,9 +425,12 @@ partial class ApplyVelocitySystem : SystemBase
 + 向实体添加组件
 + 从实体中删除组件
 + 更改共享组件中的值
-+ 每个同步点都会都会造成停顿，等待当前World中所有先前安排的作业完成。过多的同步点会让效率大大降低，但以上的操作还是
 
-无法避免的，为了解决这种问题，Unity提供了`EntityCommandBuffer`（实体命令缓冲区，简称ECB）来解决这个问题。
+每个同步点都会都会造成停顿，等待当前World中所有先前安排的作业完成。过多的同步点会让效率大大降低，但以上的操作还是
+无法避免的。
+
+为了解决这种问题，Unity提供了`EntityCommandBuffer`（实体命令缓冲区，简称`ECB`）来解决这个问题。
+
 `ECB`可以将导致结构性更改的命令排入队列，存储在`ECB`中的命令可以在一帧中晚些时候回放执行。当回放`ECB`时，这会将跨帧分布的多个同步点减少到单个同步点。下面这个案例是使用系统自带的`ECB`，这样可以最大程度的减少同步点：
 
 ```csharp
@@ -794,25 +800,15 @@ public class GroupSystem : SystemBase
 
 ![](22.gif)
 
+## 参考
+
 文章到这就结束了，回顾下来，踩的坑非常多，希望这篇文章能给小伙伴提供帮助，也期待大佬指正！
 
 对于GameObject转换为Entity流程感兴趣的同学，可以移步这篇文章：
 
-砂糖酱：Dots代码阅读笔记——ConvertToEntity的一生
++ [砂糖酱：Dots代码阅读笔记——ConvertToEntity的一生](https://zhuanlan.zhihu.com/p/157919373)
 
-+ 玉无价
++ [官方文档](https://docs.unity3d.com/Packages/com.unity.entities@0.1/manual/index.html)
 
-1. 测试1 
-2. 测试2 
-
-
-
-
-
-
-
-
-
-
-
++ 工程地址：[Unity-ECS-TaiJi-Swords-Array](https://github.com/ydwj/Unity-ECS-TaiJi-Swords-Array)
 
