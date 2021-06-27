@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unity-Timeline基础功能介绍 | ydwj的游戏开发日记</title><meta name="keywords" content="Unity,Timeline"><meta name="author" content="ydwj"><meta name="copyright" content="ydwj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Unity Timeline 学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity-Timeline基础功能介绍">
+<meta property="og:url" content="https://auniquepig.com/2021/06/21/Timline/index.html">
+<meta property="og:site_name" content="ydwj的游戏开发日记">
+<meta property="og:description" content="Unity Timeline 学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z3.ax1x.com/2021/06/25/Rlz7tA.jpg">
+<meta property="article:published_time" content="2021-06-21T06:49:24.000Z">
+<meta property="article:modified_time" content="2021-06-27T06:11:18.674Z">
+<meta property="article:author" content="ydwj">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="Timeline">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/06/25/Rlz7tA.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://auniquepig.com/2021/06/21/Timline/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":250},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ydwj","link":"链接: ","source":"来源: ydwj的游戏开发日记","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unity-Timeline基础功能介绍',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-06-27 14:11:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://z3.ax1x.com/2021/06/23/Rn71eS.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://z3.ax1x.com/2021/06/25/Rlz7tA.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ydwj的游戏开发日记</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unity-Timeline基础功能介绍</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-21T06:49:24.000Z" title="发表于 2021-06-21 14:49:24">2021-06-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-27T06:11:18.674Z" title="更新于 2021-06-27 14:11:18">2021-06-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity/">Unity</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unity-Timeline基础功能介绍"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>大智老师的课程笔记</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200909102846317.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<hr>
+<h2 id="使用插件版本："><a href="#使用插件版本：" class="headerlink" title="使用插件版本："></a>使用插件版本：</h2><ul>
+<li>TimeLine:1.2.16</li>
+<li>Cinmachine :2.6.2</li>
+<li>Unity版本：2019.3.2.f1</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020090911330387.png#pic_center" alt=""></p>
+<p>TimeLine支持多个系统的协作，而Animation 仅支持动画，所以Timeline在制作一段过场动画有天然的优越性。</p>
+<p><strong>窗口介绍：</strong></p>
+<p>区域播放按钮，选中可以自由选择播放区域<br><img src="https://img-blog.csdnimg.cn/20200909114040197.png#pic_center" alt=""></p>
+<p><strong>based on clips</strong>: 根据动画的最后一帧设置TimeLine长度</p>
+<p><strong>Fixed Length</strong>: 手动设置长度</p>
+<p>默认时间轴显示帧数（frames），也可以选择秒数（Seconds）查看</p>
+<p>可调整动画帧数（Frame Rate），TimeLine总持续时间不变，但帧数改变</p>
+<p><img src="https://img-blog.csdnimg.cn/2020090911490379.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/20200909115821495.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<hr>
+<h2 id="Actication-Track"><a href="#Actication-Track" class="headerlink" title="Actication Track"></a>Actication Track</h2><p>功能：控制场景中物体的激活</p>
+<p>选中一段clip按A键可以直接显示所有完整的Clip<br>可以添加多个 Activation clip<br>Post-playback state:决定此TimeLine播放完后，物体的状态（激活或非激活）</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909142817949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>同时单独的clip片段也可以在检视窗口做精确调整：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909143441865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<hr>
+<h2 id="AnimationTrack"><a href="#AnimationTrack" class="headerlink" title="AnimationTrack"></a>AnimationTrack</h2><p>功能：对场景中的对象进行动画编辑</p>
+<p>默认录制的Animation无法改变长度，可以直接右键—ConvertToClipTrack，转换为一个Clip，即可在 animation窗口中进行操作（支持在窗口中再此进行录制完成更改）</p>
+<p>默认创建的Animation Track是无限时间长度</p>
+<hr>
+<h2 id="使用导入的动画"><a href="#使用导入的动画" class="headerlink" title="使用导入的动画"></a>使用导入的动画</h2><p>将物体直接拖入场景实例化，再拖入轨道，同类型的动画文件拖入即可，需要做位移可以单独再建一条轨道进行编辑。</p>
+<p><strong>clip的编辑模式</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/2020090915345635.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""><br>快捷键：非永久的选中某种模式，可以长按数字键：</p>
+<ul>
+<li>“1”—Mix Mode </li>
+<li>“2”—-Ripple （波纹）Mode ：等距离移动，移动一个clip前后距离都会发生改变</li>
+<li>“3”—-Replace Mode:不发生混合，直接覆盖</li>
+</ul>
+<hr>
+<h2 id="动画导入的使用全流程"><a href="#动画导入的使用全流程" class="headerlink" title="动画导入的使用全流程"></a>动画导入的使用全流程</h2><p>1：素材导入，带位移的动画如何处理</p>
+<p>动画素材下载地址：www.mixamocom</p>
+<p>材质文件嵌入在这里，需要单独导出</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909163545732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p><strong>如何使带有位移的动画持续循环：</strong></p>
+<p>无论是对原动画选择loop模式，还是在timeline 中使用loop模式，都会遇到动画循环播放完，角色回归原点的问题。</p>
+<p>解决这个问题需要去查阅动画系统中的Root Motion相关资料，这里不过多赘述，直接给出操作方法：</p>
+<p>1：点击进入模型检视窗口，Animation Type改为Humanoid：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909170601486.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>2：Avatar 选择Create From This Model </p>
+<p>3：点击进入动画文件视窗，Animation Type同样选择Humanoid，但下方Avatar选择Create From Other Avatar，然后使用刚才模型中创建出来的Avatar</p>
+<p>4：重新给场景中的模型的Animator组件赋上Avatar：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909172142540.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>5：将动画调为循环状态</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909172709310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""><br>搞定！</p>
+<p><strong>如何让对象在TImeLIne中在自己想要的位置开始运动，同时两段带运动的动画无缝衔接</strong></p>
+<p>1：Track Offsets改为Apply Scene Offsets：</p>
+<p><img src="https://img-blog.csdnimg.cn/2020090917331517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>2：两段同样带位移的动画，后面一段记得选Match Offsets To Previous Clip </p>
+<p><img src="https://img-blog.csdnimg.cn/20200909174240843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<hr>
+<h2 id="动画覆盖和Avatar-Mask"><a href="#动画覆盖和Avatar-Mask" class="headerlink" title="动画覆盖和Avatar Mask"></a>动画覆盖和Avatar Mask</h2><p><img src="https://img-blog.csdnimg.cn/20200909180131500.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>功能：两段动画融合的问题</p>
+<p>1:在一段预定要编辑的Animation Track 上右键 “Add Override Track”</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909180703939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>2：选择一段动画放入Overide Track，在指定文件夹Create - Avatar Mask</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909180911530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>3：此时我们只想人物上半身执行动画，所以将下半身屏蔽，直接点击绿色区域即可</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909183630955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>3:将Avater  添加给Override即可，发现Override上出现了一个小人，点击一下即可禁用</p>
+<p><img src="https://img-blog.csdnimg.cn/20200909185938837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<hr>
+<h2 id="Animation-Track和Clip-的设置"><a href="#Animation-Track和Clip-的设置" class="headerlink" title="Animation Track和Clip 的设置"></a>Animation Track和Clip 的设置</h2><p><img src="https://img-blog.csdnimg.cn/20200911182120458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<ul>
+<li>Clip In：决定动画本身素材的播放时间</li>
+<li>Speed Multiplier：动画播放速度</li>
+<li>Animation Extrapolation （动画推断）：决定动画播放完后如何表现</li>
+<li>Blend Curves：动画混入混出的曲线</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200914102403638.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p><strong>Remove Start Offset:整个动画根据第一帧作为起点</strong></p>
+<p>Foot IK：人物行走的时候应用反向动力学，自动调整行走的角度<br>Loop:是否选择循环（可以选择是否应用动画中的循环）</p>
+<hr>
+<h2 id="Aduio-Track"><a href="#Aduio-Track" class="headerlink" title="Aduio Track"></a>Aduio Track</h2><ol>
+<li>直接拖动音频文件到轨道（无立体感）</li>
+<li>拖动音频到轨道，选中一个物体拖到音频上即可</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200914104036635.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/20200914105408270.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<p>Sterep Pan ：声道选项</p>
+<p>Spatial Blend：绑定状态下激活，2D &amp;3D 的时间</p>
+<p>导入Timeline没声音，记得检查game视窗中是否”MUte Audio”，这样会禁用除了project文件夹中的所有的声音</p>
+<hr>
+<h2 id="Control-Track"><a href="#Control-Track" class="headerlink" title="Control Track"></a>Control Track</h2><p>主要功能：控制嵌套的TimeLine和Particle system，也能控制场景内物体的激活（和activation Track）功能类似：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200914143730905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<ol>
+<li><p>控制TimeLIne物体（Control Playable Directors），将TimeLine直接拖到轨道操作</p>
+</li>
+<li><p>Control Particle System：控制粒子系统，需要将粒子系统提前在Scene 中固定好位置</p>
+</li>
+<li><p>Control ITimeControl ：接口，需要代码实现</p>
+</li>
+<li><p>Control Children：是否允许控制子物体</p>
+</li>
+</ol>
+<hr>
+<h2 id="ITime-Control实现自定义控制"><a href="#ITime-Control实现自定义控制" class="headerlink" title="ITime Control实现自定义控制"></a>ITime Control实现自定义控制</h2><p>功能：可轻松实现一些随Timeline播放时间进行</p>
+<ul>
+<li>新建脚本继承ITimeControl接口，并在场景中实例化，同时拖拽到Control Track轨道中</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/2020091415475567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<hr>
+<h2 id="Signal-Track（2019-1后新加入的功能-）"><a href="#Signal-Track（2019-1后新加入的功能-）" class="headerlink" title="Signal Track（2019.1后新加入的功能 ）"></a>Signal Track（2019.1后新加入的功能 ）</h2><p>功能：极大的扩展Timeline与场景中物体的交互</p>
+<p>运行机制：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200914161145218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<blockquote>
+<p>在TimeLine 中创建Signal轨道，选中一帧添加信号发射器（signal Emitter）</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200914161445205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<blockquote>
+<p>创建一个Signal Emitter 的资产:</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200914161744125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<blockquote>
+<p>之后将物体拖到轨道对应的signal 标记，之后操作和UI的操作类似，不过多赘述</p>
+</blockquote>
+<p><strong>signal是支持复用的！很方便！</strong></p>
+<blockquote>
+<p>可以通过Markers在全局的轨道上添加标记:</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200914163106891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM5MzY5MDQ0,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<blockquote>
+<p>可以绑定物体的Track都可以添加Signal Emitter</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">ydwj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://auniquepig.com/2021/06/21/Timline/">https://auniquepig.com/2021/06/21/Timline/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://auniquepig.com" target="_blank">ydwj的游戏开发日记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unity/">Unity</a><a class="post-meta__tags" href="/tags/Timeline/">Timeline</a></div><div class="post_share"><div class="social-share" data-image="https://z3.ax1x.com/2021/06/25/Rlz7tA.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/06/25/Obi-Rope/"><img class="prev-cover" src="https://z3.ax1x.com/2021/06/25/R1CyDK.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">绳子插件Obi Rope介绍</div></div></a></div><div class="next-post pull-right"><a href="/2021/06/21/DotsSwords/"><img class="next-cover" src="https://i.loli.net/2021/06/21/IHO8uvw4QBpdmYE.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">用Unity DOTS制作4万飞剑的太极剑阵！</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/06/25/Firebase对接Unity打包流程/" title="Firebase对接Unity打包流程"><img class="cover" src="https://z3.ax1x.com/2021/06/25/R1YdmV.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-25</div><div class="title">Firebase对接Unity打包流程</div></div></a></div><div><a href="/2021/06/25/Obi-Rope/" title="绳子插件Obi Rope介绍"><img class="cover" src="https://z3.ax1x.com/2021/06/25/R1CyDK.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-25</div><div class="title">绳子插件Obi Rope介绍</div></div></a></div><div><a href="/2021/06/25/Stardew-Valley-1/" title="用Unity还原星露谷物语：移动，界面篇（1）"><img class="cover" src="https://z3.ax1x.com/2021/06/26/RGEHkq.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-25</div><div class="title">用Unity还原星露谷物语：移动，界面篇（1）</div></div></a></div><div><a href="/2021/06/27/Story-Editor/" title="使用xNode制作可视化剧本编辑插件(1)"><img class="cover" src="https://z3.ax1x.com/2021/06/27/RYg3zd.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-27</div><div class="title">使用xNode制作可视化剧本编辑插件(1)</div></div></a></div><div><a href="/2021/06/27/Story-Editor2/" title="Unity编辑器扩展：使用xNode制作自己的可视化工具（2）"><img class="cover" src="https://z3.ax1x.com/2021/06/27/RYwF8x.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-27</div><div class="title">Unity编辑器扩展：使用xNode制作自己的可视化工具（2）</div></div></a></div><div><a href="/2021/06/25/Unity3D-中的定制特性以及简单的编辑器扩展案例/" title="Unity3D 中的定制特性以及简单的编辑器扩展案例"><img class="cover" src="https://z3.ax1x.com/2021/06/25/R1UX0x.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-25</div><div class="title">Unity3D 中的定制特性以及简单的编辑器扩展案例</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://z3.ax1x.com/2021/06/23/Rn71eS.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">ydwj</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ydwj" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.zhihu.com/people/ba-ba-27-54" target="_blank" title="Zhihu"><i class="fab fa-zhihu"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6%E7%89%88%E6%9C%AC%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">使用插件版本：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Actication-Track"><span class="toc-number">2.</span> <span class="toc-text">Actication Track</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AnimationTrack"><span class="toc-number">3.</span> <span class="toc-text">AnimationTrack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AF%BC%E5%85%A5%E7%9A%84%E5%8A%A8%E7%94%BB"><span class="toc-number">4.</span> <span class="toc-text">使用导入的动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E5%AF%BC%E5%85%A5%E7%9A%84%E4%BD%BF%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">5.</span> <span class="toc-text">动画导入的使用全流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E8%A6%86%E7%9B%96%E5%92%8CAvatar-Mask"><span class="toc-number">6.</span> <span class="toc-text">动画覆盖和Avatar Mask</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Animation-Track%E5%92%8CClip-%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">7.</span> <span class="toc-text">Animation Track和Clip 的设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Aduio-Track"><span class="toc-number">8.</span> <span class="toc-text">Aduio Track</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Control-Track"><span class="toc-number">9.</span> <span class="toc-text">Control Track</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ITime-Control%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E5%88%B6"><span class="toc-number">10.</span> <span class="toc-text">ITime Control实现自定义控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Signal-Track%EF%BC%882019-1%E5%90%8E%E6%96%B0%E5%8A%A0%E5%85%A5%E7%9A%84%E5%8A%9F%E8%83%BD-%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">Signal Track（2019.1后新加入的功能 ）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/06/27/Story-Editor2/" title="Unity编辑器扩展：使用xNode制作自己的可视化工具（2）"><img src="https://z3.ax1x.com/2021/06/27/RYwF8x.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity编辑器扩展：使用xNode制作自己的可视化工具（2）"/></a><div class="content"><a class="title" href="/2021/06/27/Story-Editor2/" title="Unity编辑器扩展：使用xNode制作自己的可视化工具（2）">Unity编辑器扩展：使用xNode制作自己的可视化工具（2）</a><time datetime="2021-06-27T11:12:50.000Z" title="发表于 2021-06-27 19:12:50">2021-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/27/Story-Editor/" title="使用xNode制作可视化剧本编辑插件(1)"><img src="https://z3.ax1x.com/2021/06/27/RYg3zd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用xNode制作可视化剧本编辑插件(1)"/></a><div class="content"><a class="title" href="/2021/06/27/Story-Editor/" title="使用xNode制作可视化剧本编辑插件(1)">使用xNode制作可视化剧本编辑插件(1)</a><time datetime="2021-06-27T06:20:15.000Z" title="发表于 2021-06-27 14:20:15">2021-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/26/Stardew-Valley-2/" title="用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）"><img src="https://z3.ax1x.com/2021/06/26/RGEHkq.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）"/></a><div class="content"><a class="title" href="/2021/06/26/Stardew-Valley-2/" title="用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）">用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）</a><time datetime="2021-06-26T09:52:13.000Z" title="发表于 2021-06-26 17:52:13">2021-06-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/25/Stardew-Valley-1/" title="用Unity还原星露谷物语：移动，界面篇（1）"><img src="https://z3.ax1x.com/2021/06/26/RGEHkq.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Unity还原星露谷物语：移动，界面篇（1）"/></a><div class="content"><a class="title" href="/2021/06/25/Stardew-Valley-1/" title="用Unity还原星露谷物语：移动，界面篇（1）">用Unity还原星露谷物语：移动，界面篇（1）</a><time datetime="2021-06-25T09:55:33.000Z" title="发表于 2021-06-25 17:55:33">2021-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/25/Unity3D-%E4%B8%AD%E7%9A%84%E5%AE%9A%E5%88%B6%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%89%A9%E5%B1%95%E6%A1%88%E4%BE%8B/" title="Unity3D 中的定制特性以及简单的编辑器扩展案例"><img src="https://z3.ax1x.com/2021/06/25/R1UX0x.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity3D 中的定制特性以及简单的编辑器扩展案例"/></a><div class="content"><a class="title" href="/2021/06/25/Unity3D-%E4%B8%AD%E7%9A%84%E5%AE%9A%E5%88%B6%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%89%A9%E5%B1%95%E6%A1%88%E4%BE%8B/" title="Unity3D 中的定制特性以及简单的编辑器扩展案例">Unity3D 中的定制特性以及简单的编辑器扩展案例</a><time datetime="2021-06-25T09:21:02.000Z" title="发表于 2021-06-25 17:21:02">2021-06-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By ydwj</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

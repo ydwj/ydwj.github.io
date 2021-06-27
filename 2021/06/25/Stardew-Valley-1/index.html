@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>用Unity还原星露谷物语：移动，界面篇（1） | ydwj的游戏开发日记</title><meta name="keywords" content="Unity,C#"><meta name="author" content="ydwj"><meta name="copyright" content="ydwj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="用Unity复刻我最爱的星露谷~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Unity还原星露谷物语：移动，界面篇（1）">
+<meta property="og:url" content="https://auniquepig.com/2021/06/25/Stardew-Valley-1/index.html">
+<meta property="og:site_name" content="ydwj的游戏开发日记">
+<meta property="og:description" content="用Unity复刻我最爱的星露谷~">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z3.ax1x.com/2021/06/26/RGEHkq.gif">
+<meta property="article:published_time" content="2021-06-25T09:55:33.000Z">
+<meta property="article:modified_time" content="2021-06-27T10:24:11.713Z">
+<meta property="article:author" content="ydwj">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/06/26/RGEHkq.gif"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://auniquepig.com/2021/06/25/Stardew-Valley-1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":250},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ydwj","link":"链接: ","source":"来源: ydwj的游戏开发日记","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '用Unity还原星露谷物语：移动，界面篇（1）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-06-27 18:24:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://z3.ax1x.com/2021/06/23/Rn71eS.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://z3.ax1x.com/2021/06/26/RGEHkq.gif')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ydwj的游戏开发日记</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">用Unity还原星露谷物语：移动，界面篇（1）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-25T09:55:33.000Z" title="发表于 2021-06-25 17:55:33">2021-06-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-27T10:24:11.713Z" title="更新于 2021-06-27 18:24:11">2021-06-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity/">Unity</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="用Unity还原星露谷物语：移动，界面篇（1）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>大家好，我是再无悲喜的炎拳。</p>
+<p>作为爆卖1000万份的模拟农场RPG，星露谷自然吸引了我这样的休闲玩家，本期待能愉悦的搭建自己的小农场，结果却沉迷钓鱼下矿无法自拔，过起了007的日子，最后只能大叹西八！</p>
+<p><img src="1g.gif" alt="熬夜伤身体~"></p>
+<p>当然，这些只是玩笑话，星露谷中丰富的人物互动事件，有趣的耕种建造系统，以及春夏秋冬独有节日和大量的彩蛋，让玩家刚入便能迅速融入这个可爱的小镇。听着小曲，结束一天的冒险后，带着路边摘得野花回家，路上遇到喜欢的人，顺手将花送给她，知道她对你的爱心又多了一个。晚上在家门口钓钓鱼，回家摸摸宠物入睡。。这样充实愉悦的生活，不由让我感叹，比起城里和乡下，还是做一只星露谷中的老鼠好啊~</p>
+<p><img src="2g.gif" alt="夏日结束的时候，记得来看月光水母起舞~"></p>
+<p>废话不多说，进入主题，原作者Eric Barone花费了四年时间，独立开发了星露谷物语，可见里面看似简单的功能还是工作量蛮大的。实际上在复刻星露谷的过程中，我也逐渐察觉到了许多在玩的时候，并未在意的丰富的细节。尝试还原自己喜爱的游戏，是一个有趣的过程，你能更为透彻的感受这个世界的肌理，以及制作者的心情~</p>
+<hr>
+<p>作为一款2D像素游戏，首先自然是移动，网上找的星露谷素材包里人物的精灵图分割的挺有条理，我选择了阿比盖尔作为主角。</p>
+<p>使用前需要对素材进行设置，过滤模式设置为Point，默认选项设置为不压缩图片质量，同时修改图集参数Pixels Per Unit为16（具体根据图集的人物长度决定）。 最后用SpriteEditor中Grid By Cell Size的方法将图集分割成16 * 16像素大小的图片，阿比盖尔的素材就准备完成了：</p>
+<p><img src="3.png" alt=""></p>
+<p>接下来制作人物的移动动画，星露谷中人物的移动有八个方向：上下左右，左上，左下，右上右下，实际上展示的动画只有上下左右四个方向，素材中已经包含了这一套动作，我们直接使用unity 的动画系统制作各个方向的移动动画即可：</p>
+<p><img src="4g.gif" alt="10s快速做动画！"></p>
+<p>同时在代码中写个方向的枚举类做准备，这里看起来比较繁琐，但星露谷中几乎所有的操作都和方向有关，需要获得人物当前精准的方向，所以还是选择了这个比较笨重的办法来控制动画：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> Direction</span><br><span class="line">&#123;</span><br><span class="line">   Down,Up,Left,Right,DownLeft,DownRight,UpLeft,UpRight,Stand</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后开始制作动画状态机，星露谷中人物的日常状态为站立和行走，同时每种状态包含四个方向，所以我们可以选择混合树来管理这些方向的转换：</p>
+<p><img src="5.png" alt="新建两个混合树"></p>
+<p><img src="6.png" alt="每个混合树包含四个方向的动画"></p>
+<p>星露谷人物移动没有加速的过程，直接匀速运动，所以我们直接设置类型为1D，通过检测按键按下+长按事件，控制动画转换即可：</p>
+<p><img src="7.png" alt=""></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">UniformMove</span>(<span class="params"></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    Vector2 position = transform.position;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (GetDirection())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> Direction.Down:</span><br><span class="line">            position.y = position.y + -Speed * Time.deltaTime;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Direction.Up:</span><br><span class="line">            position.y = position.y + Speed * Time.deltaTime;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Direction.Left:</span><br><span class="line">            position.x = position.x + -Speed * Time.deltaTime;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Direction.Right:</span><br><span class="line">            position.x = position.x + Speed * Time.deltaTime;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Direction.DownLeft:</span><br><span class="line">            position.y = position.y + -Speed * Time.deltaTime * TurnSpeed;</span><br><span class="line">            position.x = position.x + -Speed * Time.deltaTime * TurnSpeed;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Direction.DownRight:</span><br><span class="line">            position.y = position.y + -Speed * Time.deltaTime * TurnSpeed;</span><br><span class="line">            position.x = position.x + Speed * Time.deltaTime  * TurnSpeed;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Direction.UpLeft:</span><br><span class="line">            position.y = position.y + Speed * Time.deltaTime * TurnSpeed;</span><br><span class="line">            position.x = position.x + -Speed * Time.deltaTime * TurnSpeed;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Direction.UpRight:</span><br><span class="line">            position.y = position.y + Speed * Time.deltaTime * TurnSpeed;</span><br><span class="line">            position.x = position.x + Speed * Time.deltaTime * TurnSpeed;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Direction.Stand:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="literal">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    rigidbody2D.MovePosition(position);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>游戏中人物选中物品，会有一个举起物品一起走的动作，物品也会有一个一上一下的动画，在状态机里新建一层layer执行物品动画即可，最终效果如下：</p>
+<p><img src="8g.gif" alt=""></p>
+<p>这样人物的移动暂时就完成了，后续要添加新的动画也比较方便，接下来完成人物的状态栏背包，首先同样从精灵图集中找到面板素材，面板需要增删物品时自动排列，所以我选择用Unity自带的UI控件Scrollview来完成，物品是在横向逐渐增加，所以我们直接删除滚动条，给Viewport增加一个Horizontal组件：</p>
+<p><img src="9g.gif" alt=""></p>
+<p>然后再根据需求建立物品的模板预制体，并在Horizontal中测试出物品之间的合适的间距，当涉及到物品的增删操作，就不需要自己再调整布局了，效果如下：</p>
+<p><img src="10g.gif" alt=""></p>
+<p>这里可能有朋友注意到不同物品的信息面板大小也有所不同，星露谷中物品繁多，对应的描述文字数量也不同，所以当我们生成不同的物品的时候，需要根据文字的数量来决定面板的宽度，具体代码如下：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造信息展示面板 ，传入参数的info中包含描述信息</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span>  <span class="title">SetDesPanel</span>(<span class="params">ItemInfo info </span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="comment">//载入字体，获取描述文字</span></span><br><span class="line">       Font font = Resources.Load&lt;Font&gt;(<span class="string">&quot;Font/Arial&quot;</span>);</span><br><span class="line">       <span class="built_in">int</span> fontsize = <span class="number">18</span>;</span><br><span class="line">       <span class="built_in">string</span> text = info.description;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//获取这段文字的总字符长度</span></span><br><span class="line">       font.RequestCharactersInTexture(text, fontsize, FontStyle.Normal);</span><br><span class="line">       CharacterInfo characterInfo;</span><br><span class="line">       <span class="built_in">float</span> width = <span class="number">0f</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; text.Length; i++)</span><br><span class="line">       &#123;</span><br><span class="line">          <span class="comment">// Debug.Log(&quot;字符长度&quot;);</span></span><br><span class="line">           font.GetCharacterInfo(text[i], <span class="keyword">out</span> characterInfo, fontsize);</span><br><span class="line">           width += characterInfo.advance;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//设置信息面板长宽</span></span><br><span class="line">       <span class="keyword">if</span> (width &lt;=<span class="number">253</span> &amp;&amp; width &gt; <span class="number">173</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           DisplayPanel.rectTransform.sizeDelta = <span class="keyword">new</span> Vector2(width, <span class="number">245</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">else</span> <span class="keyword">if</span> (width &lt; <span class="number">173</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           DisplayPanel.rectTransform.sizeDelta = <span class="keyword">new</span> Vector2(<span class="number">173</span>, <span class="number">245</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">else</span></span><br><span class="line">       &#123;</span><br><span class="line">           <span class="built_in">int</span> line =(<span class="built_in">int</span>)(width /<span class="number">253</span>);</span><br><span class="line">           <span class="comment">//Debug.Log(&quot;行数&quot;+line );</span></span><br><span class="line">           DisplayPanel.rectTransform.sizeDelta = <span class="keyword">new</span> Vector2(<span class="number">300</span>, <span class="number">245</span>+line*<span class="number">27</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>同时要保证信息面板始终渲染在物品的后面，这样才不会被物品图标遮挡，所以将其父级设置为Inventory_Tabs，和Viewport同一层级：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DisplayPanel.transform.SetParent(inventory_Tabs.transform,<span class="literal">false</span> );</span><br></pre></td></tr></table></figure>
+<p>最后一个关键点是选中物品并对其进行操作，这里要结合数据的读取来说，我把这部分内容放在下一篇，最后放一张目前实现的进度：包括从Excel表格和json中分别载入物品信息，数据的存储，基于Tilemap的单独每块地上植物的小动画（有点小麻烦），施工还没完成，就先不放工程了，敬请期待~</p>
+<p><img src="11g.gif" alt=""></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">ydwj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://auniquepig.com/2021/06/25/Stardew-Valley-1/">https://auniquepig.com/2021/06/25/Stardew-Valley-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://auniquepig.com" target="_blank">ydwj的游戏开发日记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unity/">Unity</a><a class="post-meta__tags" href="/tags/C/">C#</a></div><div class="post_share"><div class="social-share" data-image="https://z3.ax1x.com/2021/06/26/RGEHkq.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/06/26/Stardew-Valley-2/"><img class="prev-cover" src="https://z3.ax1x.com/2021/06/26/RGEHkq.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）</div></div></a></div><div class="next-post pull-right"><a href="/2021/06/25/Unity3D-%E4%B8%AD%E7%9A%84%E5%AE%9A%E5%88%B6%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%89%A9%E5%B1%95%E6%A1%88%E4%BE%8B/"><img class="next-cover" src="https://z3.ax1x.com/2021/06/25/R1UX0x.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity3D 中的定制特性以及简单的编辑器扩展案例</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/06/27/Story-Editor/" title="使用xNode制作可视化剧本编辑插件(1)"><img class="cover" src="https://z3.ax1x.com/2021/06/27/RYg3zd.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-27</div><div class="title">使用xNode制作可视化剧本编辑插件(1)</div></div></a></div><div><a href="/2021/06/27/Story-Editor2/" title="Unity编辑器扩展：使用xNode制作自己的可视化工具（2）"><img class="cover" src="https://z3.ax1x.com/2021/06/27/RYwF8x.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-27</div><div class="title">Unity编辑器扩展：使用xNode制作自己的可视化工具（2）</div></div></a></div><div><a href="/2021/06/25/Unity3D-中的定制特性以及简单的编辑器扩展案例/" title="Unity3D 中的定制特性以及简单的编辑器扩展案例"><img class="cover" src="https://z3.ax1x.com/2021/06/25/R1UX0x.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-25</div><div class="title">Unity3D 中的定制特性以及简单的编辑器扩展案例</div></div></a></div><div><a href="/2021/06/21/DotsSwords/" title="用Unity DOTS制作4万飞剑的太极剑阵！"><img class="cover" src="https://i.loli.net/2021/06/21/IHO8uvw4QBpdmYE.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-21</div><div class="title">用Unity DOTS制作4万飞剑的太极剑阵！</div></div></a></div><div><a href="/2021/06/25/Firebase对接Unity打包流程/" title="Firebase对接Unity打包流程"><img class="cover" src="https://z3.ax1x.com/2021/06/25/R1YdmV.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-25</div><div class="title">Firebase对接Unity打包流程</div></div></a></div><div><a href="/2021/06/25/Obi-Rope/" title="绳子插件Obi Rope介绍"><img class="cover" src="https://z3.ax1x.com/2021/06/25/R1CyDK.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-25</div><div class="title">绳子插件Obi Rope介绍</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://z3.ax1x.com/2021/06/23/Rn71eS.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">ydwj</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ydwj" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.zhihu.com/people/ba-ba-27-54" target="_blank" title="Zhihu"><i class="fab fa-zhihu"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/06/27/Story-Editor2/" title="Unity编辑器扩展：使用xNode制作自己的可视化工具（2）"><img src="https://z3.ax1x.com/2021/06/27/RYwF8x.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity编辑器扩展：使用xNode制作自己的可视化工具（2）"/></a><div class="content"><a class="title" href="/2021/06/27/Story-Editor2/" title="Unity编辑器扩展：使用xNode制作自己的可视化工具（2）">Unity编辑器扩展：使用xNode制作自己的可视化工具（2）</a><time datetime="2021-06-27T11:12:50.000Z" title="发表于 2021-06-27 19:12:50">2021-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/27/Story-Editor/" title="使用xNode制作可视化剧本编辑插件(1)"><img src="https://z3.ax1x.com/2021/06/27/RYg3zd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用xNode制作可视化剧本编辑插件(1)"/></a><div class="content"><a class="title" href="/2021/06/27/Story-Editor/" title="使用xNode制作可视化剧本编辑插件(1)">使用xNode制作可视化剧本编辑插件(1)</a><time datetime="2021-06-27T06:20:15.000Z" title="发表于 2021-06-27 14:20:15">2021-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/26/Stardew-Valley-2/" title="用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）"><img src="https://z3.ax1x.com/2021/06/26/RGEHkq.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）"/></a><div class="content"><a class="title" href="/2021/06/26/Stardew-Valley-2/" title="用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）">用Unity还原星露谷物语（2）：种地篇（数据读写+TileMap）</a><time datetime="2021-06-26T09:52:13.000Z" title="发表于 2021-06-26 17:52:13">2021-06-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/25/Stardew-Valley-1/" title="用Unity还原星露谷物语：移动，界面篇（1）"><img src="https://z3.ax1x.com/2021/06/26/RGEHkq.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Unity还原星露谷物语：移动，界面篇（1）"/></a><div class="content"><a class="title" href="/2021/06/25/Stardew-Valley-1/" title="用Unity还原星露谷物语：移动，界面篇（1）">用Unity还原星露谷物语：移动，界面篇（1）</a><time datetime="2021-06-25T09:55:33.000Z" title="发表于 2021-06-25 17:55:33">2021-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/25/Unity3D-%E4%B8%AD%E7%9A%84%E5%AE%9A%E5%88%B6%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%89%A9%E5%B1%95%E6%A1%88%E4%BE%8B/" title="Unity3D 中的定制特性以及简单的编辑器扩展案例"><img src="https://z3.ax1x.com/2021/06/25/R1UX0x.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity3D 中的定制特性以及简单的编辑器扩展案例"/></a><div class="content"><a class="title" href="/2021/06/25/Unity3D-%E4%B8%AD%E7%9A%84%E5%AE%9A%E5%88%B6%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%89%A9%E5%B1%95%E6%A1%88%E4%BE%8B/" title="Unity3D 中的定制特性以及简单的编辑器扩展案例">Unity3D 中的定制特性以及简单的编辑器扩展案例</a><time datetime="2021-06-25T09:21:02.000Z" title="发表于 2021-06-25 17:21:02">2021-06-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By ydwj</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
