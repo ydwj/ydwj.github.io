@@ -9,7 +9,7 @@ categories:
 - Unity 
 keyword: 'xNode' 
 description: 可视化剧情制作工具
-cover: https://z3.ax1x.com/2021/06/27/RYg3zd.jpg
+cover: https://z3.ax1x.com/2021/07/05/RfzRht.jpg
 ---
 
 大家好，我是炎拳。
